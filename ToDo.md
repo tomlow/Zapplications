@@ -1,10 +1,13 @@
 # To Do
 
-- Finish ER Diagram
+- Tom: Finish ER Diagram
 
-- Build out models, routes
+- Tom: Build out models, routes
 
-- Front end components
+- Dru: design layout pages and homepage
+
+- Dru and Tom: Front end components
+
 - - Auto redirect to add in materials
     like cover letter and resume.
 - - Different paths/wording depending on
