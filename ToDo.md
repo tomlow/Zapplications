@@ -5,9 +5,9 @@
 - Build out models, routes
 
 - Front end components
-- - Auto redirect to add in materials
+ - Auto redirect to add in materials
     like cover letter and resume.
-- - Different paths/wording depending on
+ - Different paths/wording depending on
     employer vs. job seeker
 
 - Autocomplete location entry with API
