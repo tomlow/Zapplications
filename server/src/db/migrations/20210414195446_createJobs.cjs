@@ -16,6 +16,8 @@ exports.up = async (knex) => {
     table.integer("minSal")
     table.integer("maxSal")
     table.boolean("remote").notNullable()
+    table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
+    table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })
 }
 
@@ -25,3 +27,5 @@ exports.up = async (knex) => {
 exports.down = (knex) => {
   return knex.schema.dropTableIfExists("jobs")
 }
+
+
