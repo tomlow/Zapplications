@@ -12,7 +12,7 @@ exports.up = async (knex) => {
     table.string("location").notNullable()
     table.string("department")
     table.string("level").notNullable()
-    table.string("description", 1000).notNullable()
+    table.text("description").notNullable()
     table.integer("minSal")
     table.integer("maxSal")
     table.boolean("remote").notNullable()
