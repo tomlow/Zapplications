@@ -6,7 +6,7 @@
  * @param {Knex} knex
  */
 
-const tableName
+const tableName = "postings"
 exports.up = async (knex) => {
   return knex.createTable(`${tableName}`, table => {
     table.bigIncrements("id")
