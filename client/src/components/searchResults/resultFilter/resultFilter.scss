@@ -1,0 +1,19 @@
+.results-filter {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 500;
+  
+  li:not(:nth-last-child(1)) {
+    padding-right: 2rem;
+    font-size: 12px;
+  }
+
+  .search-icon {
+    margin: 0 0 0 2rem ;
+    font-size: 25px;
+    padding: 0;
+  }
+}

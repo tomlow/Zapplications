@@ -1,0 +1,18 @@
+.results-header {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  background-color: #c2e3ed6d;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0 2rem;
+
+  li {
+    padding: 1rem;
+    font-size: .85rem;
+  }
+}
