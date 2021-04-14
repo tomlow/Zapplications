@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import './search.scss'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
+
+
 const Search = (props) => {
   const [state, setState] = useState({
     description: '',
@@ -26,18 +30,20 @@ const Search = (props) => {
   
   return (
     <form className="search-form" onSubmit={handleSearch}>
+      <FontAwesomeIcon icon={faSearch} className='search-icon' />
       <input
         type="text"
         name="description"
-        className="input"
+        className="input input-long"
         value={state.description || ''}
-        placeholder="Enter search term"
+        placeholder="Job title or keywords"
         onChange={handleInputChange}
       />
+      <FontAwesomeIcon icon={faMapMarkerAlt} className='search-icon' />
       <input
         type="text"
         name="location"
-        className="input"
+        className="input input-long"
         value={state.location || ''}
         placeholder="City or Zip code"
         onChange={handleInputChange}
