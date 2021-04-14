@@ -5,11 +5,12 @@
 /**
  * @param {Knex} knex
  */
-
-const tableName
 exports.up = async (knex) => {
-  return knex.createTable(`${tableName}`, table => {
+  return knex.schema.createTable("coverLetters", table => {
     table.bigIncrements("id")
+    table.integer("userId").notNullable()
+    table.string("name").notNullable()
+    table.string("s3Link").notNullable()
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })
@@ -19,5 +20,5 @@ exports.up = async (knex) => {
  * @param {Knex} knex
  */
 exports.down = (knex) => {
-  return knex.dropTableIfExists(`${tableName}`)
+  return knex.schema.dropTableIfExists("coverLetters")
 }

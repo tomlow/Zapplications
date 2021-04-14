@@ -6,10 +6,12 @@
  * @param {Knex} knex
  */
 
-const tableName
+const tableName = "postings"
 exports.up = async (knex) => {
   return knex.createTable(`${tableName}`, table => {
     table.bigIncrements("id")
+    table.integer("userId").notNullable()
+    table.integer("jobId").notNullable()
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })

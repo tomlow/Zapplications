@@ -6,10 +6,13 @@
  * @param {Knex} knex
  */
 
-const tableName
+const tableName = "resumes"
 exports.up = async (knex) => {
-  return knex.createTable(`${tableName}`, table => {
+  return knex.createTable(tableName, table => {
     table.bigIncrements("id")
+    table.integer("userId").notNullable()
+    table.string("name").notNullable()
+    table.string("s3Link").notNullable()
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })
@@ -19,5 +22,5 @@ exports.up = async (knex) => {
  * @param {Knex} knex
  */
 exports.down = (knex) => {
-  return knex.dropTableIfExists(`${tableName}`)
+  return knex.dropTableIfExists(tableName)
 }
