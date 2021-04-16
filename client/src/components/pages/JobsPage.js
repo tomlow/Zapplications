@@ -19,7 +19,7 @@ const JobsPage = (props) => {
       <div className='search-results-wrapper'>
         <SearchResults />
       </div>
-      <img src='https://image.shutterstock.com/shutterstock/photos/1620022015/display_1500/stock-vector-vector-illustration-aimed-at-the-goal-increase-motivation-way-to-achieve-the-goal-teamwork-help-1620022015.jpg' alt='Helping Hand'/>
+      <img src='https://image.shutterstock.com/shutterstock/photos/1620022015/display_1500/stock-vector-vector-illustration-aimed-at-the-goal-increase-motivation-way-to-achieve-the-goal-teamwork-help-1620022015.jpg' alt='Helping Hand' />
     </div>
   )
 }
