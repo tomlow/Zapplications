@@ -24,7 +24,8 @@ const App = (props) => {
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path='/Jobs' component={ JobsPage }/>
+        <Route exact path='/jobs' component={ JobsPage }/>
+        <Route exact path='/jobs:id' component={ JobsPage }/>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
