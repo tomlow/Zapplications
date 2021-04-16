@@ -5,7 +5,7 @@ class Posting extends Model {
     return "postings"
   }
 
-  static set jsonSchema() {
+  static get jsonSchema() {
     return {
       type: "object",
       required: ["userId", "jobId"],

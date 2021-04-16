@@ -5,7 +5,7 @@ class Resume extends Model {
     return "resumes"
   }
 
-  static set jsonSchema() {
+  static get jsonSchema() {
     return {
       type: "object",
       required: ["name", "userId", "s3Link"],
