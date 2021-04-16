@@ -8,7 +8,7 @@ import './jobsPage.scss'
 const JobsPage = (props) => {
   const [jobs, setJobs] = useState([])
 
-  const fetchJobs = async () => {
+  const searchJobs = async () => {
     try {
       const response = await fetch("/api/v1/jobs")
       if (!response.ok) {

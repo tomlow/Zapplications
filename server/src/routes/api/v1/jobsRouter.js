@@ -10,7 +10,7 @@ jobsRouter.get("/", async (req, res) => {
     const jobs = await Job.query().select("title", "location", "level", "fullTime").where("title", title).where("location", location).where("level", level, "fullTime", fullTime).orderBy("createdAt")
 
     const serializedJobs = jobSerializer.getSummary(jobs)
-    res.status(200).json({ jobData: serializedJobs })
+    res.status(200).json({ jobs: serializedJobs })
   } catch (error) {
     res.status(500).json({ error: error })
   }
