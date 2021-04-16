@@ -8,6 +8,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import JobsPage from './pages/JobsPage'
+import JobShow from './pages/JobShow'
+
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -25,7 +27,7 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path='/jobs' component={ JobsPage }/>
-        <Route exact path='/jobs:id' component={ JobsPage }/>
+        <Route exact path='/jobs/:id' component={ JobShow }/>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
