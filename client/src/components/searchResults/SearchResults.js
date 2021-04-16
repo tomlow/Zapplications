@@ -1,7 +1,7 @@
 import React from 'react' 
 
 import ResultFilter from './resultFilter/ResultFilter'
-import ResultsList from './resultList/ResultList'
+import ResultTable from './resultTable/ResultTable'
 
 import './searchResults.scss'
 
@@ -12,9 +12,7 @@ const SearchResults = (props) => {
       <div>
         <ResultFilter />
       </div>
-      <div className='search-list-container'>
-      <ResultsList />
-      </div>
+      <ResultTable />
     </>
   )
 }

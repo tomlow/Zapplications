@@ -26,3 +26,9 @@
   font-size: 2.5rem;
   padding-bottom: 3rem;
 }
+
+@media all and (max-width: 480px) {
+  .job-page-container {
+    width: 100%;
+  }
+}
