@@ -5,7 +5,7 @@ class Application extends Model {
     return "applications"
   }
 
-  static set jsonSchema() {
+  static get jsonSchema() {
     return {
       type: "object",
       required: ["userId", "jobId", "resumeLink"],

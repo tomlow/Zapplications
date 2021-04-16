@@ -5,7 +5,7 @@ class CoverLetter extends Model {
     return "coverLetters"
   }
 
-  static set jsonSchema() {
+  static get jsonSchema() {
     return {
       type: "object",
       required: ["name", "userId", "s3Link"],
