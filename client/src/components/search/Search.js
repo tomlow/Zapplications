@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 import './search.scss'
 
@@ -7,31 +7,38 @@ import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 const Search = (props) => {
-  const [state, setState] = useState({
-    description: '',
+  const [searchCriteria, setSearchCriteria] = useState({
+    title: '',
     location: '',
-    salary: '',
-    full_time: 'Full Time',
-  });
+    level: '',
+    fullTime: 'Full Time',
+  })
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    setState({ ...state, [name]: value })
-  };
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    console.log(state);
+    setSearchCriteria({ ...searchCriteria, [name]: value })
   }
-  
+
+  const handleSearch = async (event) => {
+    event.preventDefault()
+    try {
+      const response = await fetch("/api/v1/jobs")
+      if (!response.ok) {
+        throw new Error(`${response.status} (${response.statusText})`)
+      }
+    } catch (error) {
+
+    }
+  }
+
   return (
     <form className="search-form" onSubmit={handleSearch}>
       <FontAwesomeIcon icon={faSearch} className='search-icon' />
       <input
         type="text"
-        name="description"
+        name="title"
         className="input input-long"
-        value={state.description || ''}
+        value={searchCriteria.title || ''}
         placeholder="Job title or keywords"
         onChange={handleInputChange}
       />
@@ -40,16 +47,16 @@ const Search = (props) => {
         type="text"
         name="location"
         className="input input-long"
-        value={state.location || ''}
+        value={searchCriteria.location || ''}
         placeholder="City or Zip code"
         onChange={handleInputChange}
       />
       <label className='full-time-checkbox'>
         <select
-          name="full_time"
+          name="fullTime"
           className="input"
           label="Full time only"
-          checked={state.full_time}
+          checked={searchCriteria.fullTime}
           onChange={handleInputChange}
         >
           <option value='Full Time'>Full Time</option>
@@ -58,14 +65,14 @@ const Search = (props) => {
         </select>
       </label>
       <label>
-        <select 
+        <select
           className='input'
-          name='salary' 
+          name='level'
           onChange={handleInputChange}
-          value={state.salary}
+          value={searchCriteria.level}
         >
           <option>Level</option>
-          <option value='20000'>Internship</option>
+          <option value='Internship'>Internship</option>
           <option value='Entry Level'>Entry Level</option>
           <option value='Mid Level'>Mid Level</option>
           <option value='Mid-Senior level'>Mid-Senior level</option>
@@ -79,4 +86,4 @@ const Search = (props) => {
   )
 }
 
-export default Search;
+export default Search
