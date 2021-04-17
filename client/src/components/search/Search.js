@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
-const Search = (props) => {
+const Search = ({ searchJobs }) => {
   const [searchCriteria, setSearchCriteria] = useState({
     title: '',
     location: '',
@@ -19,20 +19,8 @@ const Search = (props) => {
     setSearchCriteria({ ...searchCriteria, [name]: value })
   }
 
-  const handleSearch = async (event) => {
-    event.preventDefault()
-    try {
-      const response = await fetch("/api/v1/jobs")
-      if (!response.ok) {
-        throw new Error(`${response.status} (${response.statusText})`)
-      }
-    } catch (error) {
-
-    }
-  }
-
   return (
-    <form className="search-form" onSubmit={handleSearch}>
+    <form className="search-form" onSubmit={searchJobs}>
       <FontAwesomeIcon icon={faSearch} className='search-icon' />
       <input
         type="text"
