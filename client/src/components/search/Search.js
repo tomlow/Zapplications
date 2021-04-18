@@ -5,7 +5,7 @@ import './search.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-
+//FIXME: add in a front end element and piece of state for "remote" search boolean.
 const Search = ({ searchJobs }) => {
   const [searchCriteria, setSearchCriteria] = useState({
     title: '',
