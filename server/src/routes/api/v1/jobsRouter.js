@@ -5,6 +5,8 @@ const jobsRouter = new express.Router()
 
 jobsRouter.get("/", async (req, res) => {
   try {
+
+    //edit such that any variety of search parameters could be applied here. 
     const { title, location, level, fullTime } = req.body
 
     const jobs = await Job.query().select("title", "location", "level", "fullTime").where("title", title).where("location", location).where("level", level, "fullTime", fullTime).orderBy("createdAt")

@@ -12,6 +12,7 @@ const ordinaryGuy = {
 
 class UserSeeder {
   static async seed() {
+    console.log(company1)
     await User.query().insert(company1)
     await User.query().insert(company2)
     await User.query().insert(ordinaryGuy)

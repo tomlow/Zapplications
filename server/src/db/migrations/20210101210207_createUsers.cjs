@@ -24,7 +24,7 @@ exports.up = async (knex) => {
       table.string("phone")
       table.string("picture")
       table.text("description")
-      table.boolean("is_employer").notNullable()
+      table.boolean("isEmployer").notNullable()
       table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
       table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
     })
