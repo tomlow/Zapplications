@@ -8,7 +8,7 @@
 
 const tableName = "resumes"
 exports.up = async (knex) => {
-  return knex.createTable(tableName, table => {
+  return knex.schema.createTable(tableName, table => {
     table.bigIncrements("id")
     table.integer("userId").notNullable()
     table.string("name").notNullable()
@@ -22,5 +22,5 @@ exports.up = async (knex) => {
  * @param {Knex} knex
  */
 exports.down = (knex) => {
-  return knex.dropTableIfExists(tableName)
+  return knex.schema.dropTableIfExists(tableName)
 }

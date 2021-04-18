@@ -62,7 +62,7 @@ const Search = ({ searchJobs }) => {
           <option>Level</option>
           <option value='Internship'>Internship</option>
           <option value='Entry Level'>Entry Level</option>
-          <option value='Mid Level'>Mid Level</option>
+          <option value='Mid-Level'>Mid Level</option>
           <option value='Mid-Senior level'>Mid-Senior level</option>
           <option value='Senior level'>Senior level</option>
 

@@ -20,7 +20,7 @@ class Job extends Model {
   }
 
   static get relationMappings() {
-    const { Application, Posting } = require("./index.js")
+    const { Application, User } = require("./index.js")
     return {
       applications: {
         relation: Model.HasManyRelation,
@@ -30,12 +30,12 @@ class Job extends Model {
           to: "applications.jobId"
         }
       },
-      postings: {
-        relation: Model.HasManyRelation,
-        modelClass: Posting,
+      user: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: User,
         join: {
-          from: "jobs.id",
-          to: "postings.jobId"
+          from: "jobs.userId",
+          to: "users.id"
         }
       }
     }
