@@ -16,6 +16,7 @@ exports.up = async (knex) => {
     table.text("description").notNullable()
     table.integer("minSal")
     table.integer("maxSal")
+    table.boolean("fullTime").notNullable()
     table.boolean("remote").notNullable()
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
