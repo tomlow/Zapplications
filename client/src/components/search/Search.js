@@ -67,7 +67,6 @@ const Search = ({ searchJobs }) => {
           <option value='Senior level'>Senior level</option>
         </select>
       </label>
-
       <button className='search-button' type="submit">Find Job</button>
     </form>
   )
