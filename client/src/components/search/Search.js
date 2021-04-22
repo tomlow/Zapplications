@@ -13,7 +13,6 @@ const Search = ({ searchJobs }) => {
     level: '',
     fullTime: 'Full Time',
   })
-
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setSearchCriteria({ ...searchCriteria, [name]: value })
