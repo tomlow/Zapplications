@@ -28,7 +28,7 @@ const JobsPage = (props) => {
         <img src='' />
         <h1 className='job-search-title'>Welcome to Zen Apps</h1>
         <h3 className='job-search-subtitle'>
-          Your dream job is waiting
+          Find your footing
         </h3>
         <Search searchJobs={searchJobs} />
       </div>
