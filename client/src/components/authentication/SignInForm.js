@@ -25,7 +25,6 @@ const SignInForm = () => {
         password: "is required",
       }
     }
-
     setErrors(newErrors)
   }
   const onSubmit = (event) => {
