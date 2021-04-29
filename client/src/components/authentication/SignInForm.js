@@ -27,6 +27,7 @@ const SignInForm = () => {
     }
     setErrors(newErrors)
   }
+
   const onSubmit = (event) => {
     event.preventDefault()
     validateInput(userPayload)
